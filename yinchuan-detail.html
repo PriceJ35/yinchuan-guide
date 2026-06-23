@@ -474,9 +474,15 @@ footer{text-align:center;padding:32px 16px;color:#666;font-size:15px;line-height
 
     // Highlight active section
     var active=null;
-    for(var i=sections.length-1;i>=0;i--){
-      if(sections[i].el.getBoundingClientRect().top<80){
-        active=sections[i];break;
+    // 滚到底部时，强制选中最后一个 section
+    var scrolledToBottom = (window.innerHeight + window.pageYOffset) >= (document.body.scrollHeight - 5);
+    if(scrolledToBottom && sections.length>0){
+      active=sections[sections.length-1];
+    } else {
+      for(var i=sections.length-1;i>=0;i--){
+        if(sections[i].el.getBoundingClientRect().top<80){
+          active=sections[i];break;
+        }
       }
     }
     links.forEach(function(l){l.classList.remove('active')});

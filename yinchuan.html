@@ -351,7 +351,12 @@ footer{text-align:center;padding:32px 16px;color:#666;font-size:15px;font-weight
     if(sy<120){el.classList.add('hide');el.classList.remove('show')}
     else{el.classList.remove('hide');el.classList.add('show')}
     var active=null;
-    for(var i=sections.length-1;i>=0;i--){if(sections[i].el.getBoundingClientRect().top<80){active=sections[i];break}}
+    var scrolledToBottom=(window.innerHeight+window.pageYOffset)>=(document.body.scrollHeight-5);
+    if(scrolledToBottom&&sections.length>0){
+      active=sections[sections.length-1];
+    }else{
+      for(var i=sections.length-1;i>=0;i--){if(sections[i].el.getBoundingClientRect().top<80){active=sections[i];break}}
+    }
     links.forEach(function(l){l.classList.remove('active')});
     if(active){
       active.link.classList.add('active');
