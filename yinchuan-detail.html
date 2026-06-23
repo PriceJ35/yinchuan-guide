@@ -69,6 +69,8 @@ header p{font-size:13px;opacity:.7}
 .spot-card.must-go{border:1.5px solid #f4a534;box-shadow:0 2px 8px rgba(232,89,12,.12)}
 .food .fname .must{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:linear-gradient(90deg,#e8590c,#f4a534);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
 .food-item.must-go{border:1.5px solid #f4a534;border-radius:10px;padding:14px;box-shadow:0 2px 8px rgba(232,89,12,.12);margin-bottom:12px}
+.food-body .fprice a.map{display:inline-flex;align-items:center;gap:3px;background:#e6f7f4;color:#007f6a;font-weight:600;font-size:11px;padding:2px 8px;border-radius:20px;text-decoration:none;margin-left:6px}
+.food-body .fprice a.map::before{content:"";width:10px;height:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300B386' d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z'/%3E%3C/svg%3E") no-repeat center/contain;display:inline-block;flex-shrink:0}
 
 /* Day header */
 .day-header{display:flex;align-items:center;gap:8px;margin:20px 0 10px}
@@ -275,23 +277,23 @@ footer{text-align:center;padding:32px 16px;color:#666;font-size:15px;line-height
     <div class="food-body">
       <div class="fname">怀远夜市 <span class="must">强烈推荐</span></div>
       <div class="fdesc">银川最热闹的夜市，来了一定要去 · 宫廷香酥牛肉饼、丁铁民烤蛋、一米大串、辣条，从头吃到尾</div>
-      <div class="fprice">人均 ¥30-50</div>
+      <div class="fprice">人均 ¥30-50 <a class="map" href="https://uri.amap.com/search?keyword=怀远夜市&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
     </div>
   </div>
   <div class="food-item">
     <div class="food-emoji">🥩</div>
     <div class="food-body">
-      <div class="fname">国强手抓（解放西街总店）</div>
-      <div class="fdesc">40年老字号 · 手抓羊肉、烤羊背、枸杞苗、沙葱</div>
-      <div class="fprice">人均 ¥80-100</div>
+      <div class="fname">阿叶手抓</div>
+      <div class="fdesc">手抓羊肉蘸醋就是宁夏味，肉质鲜嫩</div>
+      <div class="fprice">人均 ¥80-100 <a class="map" href="https://uri.amap.com/search?keyword=阿叶手抓&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
     </div>
   </div>
   <div class="food-item">
     <div class="food-emoji">🔥</div>
     <div class="food-body">
-      <div class="fname">红柳枝滩羊烧烤</div>
-      <div class="fdesc">红柳枝穿肉烤，跟普通烤串完全不一样 · 烤羊排必点</div>
-      <div class="fprice">人均 ¥60-80</div>
+      <div class="fname">羊尕子烧烤（阅彩城店）</div>
+      <div class="fdesc">银川人气烧烤，滩羊烤串、红柳枝烤肉 · 金凤区阅彩城</div>
+      <div class="fprice">人均 ¥60-80 <a class="map" href="https://uri.amap.com/search?keyword=羊尕子烧烤阅彩城&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
     </div>
   </div>
   <div class="food-item">
@@ -299,15 +301,15 @@ footer{text-align:center;padding:32px 16px;color:#666;font-size:15px;line-height
     <div class="food-body">
       <div class="fname">阿叶羊杂碎（前进街店）</div>
       <div class="fdesc">一碗羊杂碎汤，早餐宵夜都合适</div>
-      <div class="fprice">人均 ¥25-35</div>
+      <div class="fprice">人均 ¥25-35 <a class="map" href="https://uri.amap.com/search?keyword=阿叶羊杂碎&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
     </div>
   </div>
   <div class="food-item">
     <div class="food-emoji">🍽</div>
     <div class="food-body">
-      <div class="fname">迎宾楼（解放西街店）</div>
+      <div class="fname">迎宾楼</div>
       <div class="fdesc">老字号清真菜，种类多，适合聚餐</div>
-      <div class="fprice">人均 ¥50-70</div>
+      <div class="fprice">人均 ¥50-70 <a class="map" href="https://uri.amap.com/search?keyword=迎宾楼&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
     </div>
   </div>
 </div>
@@ -410,7 +412,7 @@ footer{text-align:center;padding:32px 16px;color:#666;font-size:15px;line-height
 
 <!-- 注意事项 -->
 <div class="sec" id="sec-tips">
-<div class="sec-title"><span class="icon">⚠️</span> 最后说几点</div>
+<div class="sec-title"><span class="icon">⚠️</span> 最后讲两句</div>
 <div class="c">
   <ul class="notice">
     <li><b>防晒不是开玩笑</b>：紫外线极强，SPF50+涂起来，帽子冰袖都带上</li>
