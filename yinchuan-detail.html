@@ -485,7 +485,11 @@ footer{text-align:center;padding:32px 16px;color:#666;font-size:15px;line-height
       }
     }
     links.forEach(function(l){l.classList.remove('active')});
-    if(active) active.link.classList.add('active');
+    if(active){
+      active.link.classList.add('active');
+      // mobile: 把激活的 tab 滚到电梯导航可见区域
+      active.link.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    }
   }
 
   var ticking=false;

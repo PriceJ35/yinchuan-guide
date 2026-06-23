@@ -353,7 +353,10 @@ footer{text-align:center;padding:32px 16px;color:#666;font-size:15px;font-weight
     var active=null;
     for(var i=sections.length-1;i>=0;i--){if(sections[i].el.getBoundingClientRect().top<80){active=sections[i];break}}
     links.forEach(function(l){l.classList.remove('active')});
-    if(active)active.link.classList.add('active');
+    if(active){
+      active.link.classList.add('active');
+      active.link.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    }
   }
   var t=false;
   window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){update();t=false});t=true}});
