@@ -68,6 +68,7 @@ header p{font-size:13px;opacity:.7}
 .spot-card .spot-name .must{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:linear-gradient(90deg,#e8590c,#f4a534);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
 .spot-card.must-go{border:1.5px solid #f4a534;box-shadow:0 2px 8px rgba(232,89,12,.12)}
 .food .fname .must{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:linear-gradient(90deg,#e8590c,#f4a534);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.food-item.must-go{border:1.5px solid #f4a534;border-radius:10px;padding:14px;box-shadow:0 2px 8px rgba(232,89,12,.12);margin-bottom:12px}
 
 /* Day header */
 .day-header{display:flex;align-items:center;gap:8px;margin:20px 0 10px}
@@ -232,10 +233,22 @@ footer{text-align:center;padding:32px 16px;color:#ccc;font-size:12px;line-height
 <div class="sec" id="sec-spots">
 <div class="sec-title"><span class="icon">🏔</span> 必去景点一览</div>
 
+<div class="spot-card must-go">
+  <img class="spot-img" src="images/lanshan.jpg" alt="览山公园罗马剧场" loading="lazy">
+  <div class="spot-name">🌅 览山公园<span class="must">强烈推荐</span></div>
+  <div class="spot-desc">银川看日落第一选择，婚礼客人必去。罗马风格露天剧场建在山上，夕阳打过来非常震撼，穿鲜艳裙子拍照超出片</div>
+  <div class="spot-meta"><span>🎫 免费</span> <span>📍 金凤区内</span> <span>🚕 10min</span> <span>⏰ 1h</span> <a class="map" href="https://uri.amap.com/search?keyword=览山公园&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+</div>
+<div class="spot-card must-go">
+  <img class="spot-img" src="images/shapotou.jpg" alt="沙坡头沙漠风光" loading="lazy">
+  <div class="spot-name">🐪 沙坡头（中卫）<span class="must">强烈推荐</span></div>
+  <div class="spot-desc">黄河和沙漠交汇的地方，西北沙漠体验的天花板。有时间一定要去——滑沙、骑骆驼、黄河漂流、沙漠冲浪、羊皮筏子，一天玩不够。沙漠里穿鲜艳裙子拍照绝了</div>
+  <div class="spot-meta"><span>🎫 ¥80</span> <span>🚗 距银川约3h</span> <span>⏰ 1-2天</span> <a class="map" href="https://uri.amap.com/search?keyword=沙坡头景区&amp;city=640500" target="_blank" rel="noopener">高德导航</a></div>
+</div>
 <div class="spot-card">
   <img class="spot-img" src="images/ningxia-museum.jpg" alt="宁夏博物馆建筑外观" loading="lazy">
   <div class="spot-name">🏛 宁夏博物馆</div>
-  <div class="spot-desc">了解西夏历史和宁夏文化的最佳去处，馆藏丰富，逛2小时刚好</div>
+  <div class="spot-desc">了解一下西夏历史和宁夏文化，逛2小时刚好</div>
   <div class="spot-meta"><span>🎫 免费</span> <span>📍 金凤区内</span> <span>🚕 10min</span> <span>⏰ 2h</span> <a class="map" href="https://uri.amap.com/search?keyword=宁夏博物馆&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
 </div>
 <div class="spot-card">
@@ -243,12 +256,6 @@ footer{text-align:center;padding:32px 16px;color:#ccc;font-size:12px;line-height
   <div class="spot-name">🎬 镇北堡西部影城</div>
   <div class="spot-desc">大话西游、红高粱、新龙门客栈拍摄地。换上戏服在影视城里拍照，体验感很强</div>
   <div class="spot-meta"><span>🎫 ¥80</span> <span>🚕 约40min</span> <span>⏰ 3-4h</span> <a class="map" href="https://uri.amap.com/search?keyword=镇北堡西部影城&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
-</div>
-<div class="spot-card must-go">
-  <img class="spot-img" src="images/lanshan.jpg" alt="览山公园罗马剧场" loading="lazy">
-  <div class="spot-name">🌅 览山公园<span class="must">强烈推荐</span></div>
-  <div class="spot-desc">银川看日落第一选择，婚礼客人必去。罗马风格露天剧场建在山上，夕阳打过来非常震撼，穿鲜艳裙子拍照超出片</div>
-  <div class="spot-meta"><span>🎫 免费</span> <span>📍 金凤区内</span> <span>🚕 10min</span> <span>⏰ 1h</span> <a class="map" href="https://uri.amap.com/search?keyword=览山公园&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
 </div>
 <div class="spot-card">
   <img class="spot-img" src="images/helan-rock-art.jpg" alt="贺兰山岩画" loading="lazy">
@@ -262,20 +269,22 @@ footer{text-align:center;padding:32px 16px;color:#ccc;font-size:12px;line-height
   <div class="spot-desc">一半沙漠一半湖的奇观，坐船穿过芦苇荡，看候鸟和沙漠共存的画面</div>
   <div class="spot-meta"><span>🎫 门票+船票 ¥150</span> <span>🚕 约1h</span> <span>⏰ 大半天</span> <a class="map" href="https://uri.amap.com/search?keyword=沙湖景区&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
 </div>
-<div class="spot-card must-go">
-  <img class="spot-img" src="images/shapotou.jpg" alt="沙坡头沙漠风光" loading="lazy">
-  <div class="spot-name">🐪 沙坡头（中卫）<span class="must">强烈推荐</span></div>
-  <div class="spot-desc">黄河和沙漠交汇的地方，西北沙漠体验的天花板。有时间一定要去——滑沙、骑骆驼、黄河漂流、沙漠冲浪、羊皮筏子，一天玩不够。沙漠里穿鲜艳裙子拍照绝了</div>
-  <div class="spot-meta"><span>🎫 ¥80</span> <span>🚗 距银川约3h</span> <span>⏰ 1-2天</span> <a class="map" href="https://uri.amap.com/search?keyword=沙坡头景区&amp;city=640500" target="_blank" rel="noopener">高德导航</a></div>
-</div>
 </div>
 
 <div class="gap"></div>
 
 <!-- 美食 -->
 <div class="sec" id="sec-food">
-<div class="sec-title"><span class="icon">🍜</span> 必吃美食</div>
+<div class="sec-title"><span class="icon">🍜</span> 必吃美食</span></div>
 <div class="c">
+  <div class="food-item must-go">
+    <div class="food-emoji">🏮</div>
+    <div class="food-body">
+      <div class="fname">怀远夜市<span class="must">强烈推荐</span></div>
+      <div class="fdesc">银川最热闹的夜市，来了一定要去 · 宫廷香酥牛肉饼、丁铁民烤蛋、一米大串、辣条，从头吃到尾</div>
+      <div class="fprice">人均 ¥30-50</div>
+    </div>
+  </div>
   <div class="food-item">
     <div class="food-emoji">🥩</div>
     <div class="food-body">
@@ -306,14 +315,6 @@ footer{text-align:center;padding:32px 16px;color:#ccc;font-size:12px;line-height
       <div class="fname">迎宾楼（解放西街店）</div>
       <div class="fdesc">老字号清真菜，种类多，适合聚餐</div>
       <div class="fprice">人均 ¥50-70</div>
-    </div>
-  </div>
-  <div class="food-item">
-    <div class="food-emoji">🏮</div>
-    <div class="food-body">
-      <div class="fname">怀远夜市<span class="must">强烈推荐</span></div>
-      <div class="fdesc">银川最热闹的夜市，来了一定要去 · 宫廷香酥牛肉饼、丁铁民烤蛋、一米大串、辣条，从头吃到尾</div>
-      <div class="fprice">人均 ¥30-50</div>
     </div>
   </div>
 </div>
