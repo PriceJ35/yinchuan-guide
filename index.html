@@ -1,10 +1,504 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=yinchuan-detail.html">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>J&L欢迎大家来银川</title>
-<script>window.location.href='yinchuan-detail.html';</script>
+<meta name="description" content="来银川，这么玩 🐪 2026年7月婚礼客人完整攻略：景点一览（含照片+高德导航）、必吃美食、住宿推荐、3种行程方案、交通+周边高铁线路。">
+<meta property="og:title" content="来银川，这么玩 🐪 完整版攻略">
+<meta property="og:description" content="2026年7月来银川做客/参加婚礼必备：景点+美食+住宿+行程+交通，完整版一篇搞定。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://pricej35.github.io/yinchuan-guide/images/share-thumb.webp">
+<meta property="og:url" content="https://pricej35.github.io/yinchuan-guide/">
+<style>
+:root{--o:#e8590c;--bg:#fafafa;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;color:#333;background:var(--bg);line-height:1.8;font-size:15px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:0 0 80px}
+
+/* Elevator nav */
+.elevator{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #eee;padding:0;transition:transform .3s,box-shadow .3s}
+.elevator.hide{transform:translateY(-100%)}
+.elevator.show{box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.elevator-inner{max-width:640px;margin:0 auto;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:10px 12px;gap:6px}
+.elevator-inner::-webkit-scrollbar{display:none}
+.elevator a{flex-shrink:0;display:flex;align-items:center;gap:4px;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;color:#555;background:#f5f5f5;text-decoration:none;transition:all .2s;white-space:nowrap}
+.elevator a:active,.elevator a.active{background:var(--o);color:#fff}
+.elevator a .ei{font-size:14px}
+body{padding-top:52px}
+
+header{background:linear-gradient(rgba(20,30,50,.2),rgba(20,30,50,.35)),url('images/header-bg.webp') center/cover no-repeat;color:#fff;padding:44px 20px 36px;text-align:center;border-radius:0 0 24px 24px;margin-top:-52px}
+header h1{font-size:24px;font-weight:800;margin-bottom:4px}
+header p{font-size:13px;opacity:.7}
+
+.sec{padding:0 16px}
+.sec-title{font-size:18px;font-weight:700;margin:28px 0 14px;display:flex;align-items:center;gap:8px}
+.sec-title .icon{font-size:20px}
+.sec-desc{font-size:13px;color:#888;margin:-8px 0 14px}
+
+.c{background:var(--card);border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+
+/* Weather grid */
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.weather-item{background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.weather-item .wi-icon{font-size:24px;margin-bottom:4px}
+.weather-item .wi-label{font-size:12px;color:#888}
+.weather-item .wi-val{font-size:14px;font-weight:700;margin-top:2px}
+.weather-item .wi-val hot{color:var(--o)}
+
+/* Transport */
+.trans{display:flex;gap:12px;padding:14px;background:#fff;border-radius:14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.trans-icon{font-size:28px;flex-shrink:0}
+.trans-body{flex:1;font-size:13px;color:#555;line-height:1.7}
+.trans-body strong{font-size:14px;color:#333}
+.trans-body .hl{color:var(--o);font-weight:700}
+
+/* Spot card */
+.spot-card{background:#fff;border-radius:14px;padding:16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.spot-card .spot-img{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:10px;display:block}
+.spot-card .spot-credit{font-size:10px;color:#bbb;margin:-6px 0 10px;text-align:right}
+.spot-card .spot-name{font-size:15px;font-weight:700;margin-bottom:4px}
+.spot-card .spot-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:8px}
+.spot-card .spot-meta{display:flex;flex-wrap:wrap;gap:6px}
+.spot-card .spot-meta span{font-size:11px;background:#f5f5f5;color:#888;padding:2px 10px;border-radius:20px}
+.spot-card .spot-meta a.map{background:#e6f7f4;color:#007f6a;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:3px;padding:2px 8px}
+.spot-card .spot-meta a.map::before{content:"";width:11px;height:11px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300B386' d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z'/%3E%3C/svg%3E") no-repeat center/contain;display:inline-block;flex-shrink:0}
+.spot-card .spot-meta a.map:active{background:#00B386;color:#fff}
+.spot-card .spot-meta a.map:active::before{filter:brightness(0) invert(1)}
+.spot-card .spot-name .must{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:linear-gradient(90deg,#e8590c,#f4a534);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.spot-card.must-go{border:1.5px solid #f4a534;box-shadow:0 2px 8px rgba(232,89,12,.12)}
+.food .fname .must{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:linear-gradient(90deg,#e8590c,#f4a534);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.food-item.must-go{border:1.5px solid #f4a534;border-radius:10px;padding:14px;box-shadow:0 2px 8px rgba(232,89,12,.12);margin-bottom:12px}
+.food-body .fprice a.map{display:inline-flex;align-items:center;gap:3px;background:#e6f7f4;color:#007f6a;font-weight:600;font-size:11px;padding:2px 8px;border-radius:20px;text-decoration:none;margin-left:6px}
+.food-body .fprice a.map::before{content:"";width:10px;height:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300B386' d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z'/%3E%3C/svg%3E") no-repeat center/contain;display:inline-block;flex-shrink:0}
+
+/* Day header */
+.day-header{display:flex;align-items:center;gap:8px;margin:20px 0 10px}
+.day-num{background:var(--o);color:#fff;font-size:13px;font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.day-title{font-size:15px;font-weight:700;color:var(--o)}
+
+/* Food */
+.food-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #f3f3f3}
+.food-item:last-child{border:none}
+.food-emoji{font-size:28px;flex-shrink:0}
+.food-body .fname{font-size:14px;font-weight:600}
+.food-body .fdesc{font-size:12px;color:#888;margin-top:2px}
+.food-body .fprice{font-size:13px;color:var(--o);font-weight:700;margin-top:2px}
+
+/* Hotel */
+.hotel{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f3f3f3}
+.hotel:last-child{border:none}
+.hotel .hname{font-size:14px;font-weight:600}
+.hotel .hdesc{font-size:12px;color:#888;margin-top:1px}
+.hotel .hprice{font-size:13px;color:var(--o);font-weight:700;white-space:nowrap;margin-left:12px}
+
+/* Tip */
+.tip{background:#fff8e1;border-radius:10px;padding:12px 14px;font-size:13px;color:#8d6e00;margin:10px 0;line-height:1.7}
+
+/* Notice */
+.notice{list-style:none;padding:0}
+.notice li{font-size:13px;padding:8px 0;border-bottom:1px solid #f5f5f5;line-height:1.7}
+.notice li:last-child{border:none}
+
+/* Divider */
+.gap{height:8px;background:var(--bg);margin:20px 0}
+
+/* Packing list */
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}
+.pack-item{background:#fff;border-radius:10px;padding:10px 12px;font-size:13px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.pack-item b{color:var(--o)}
+
+footer{text-align:center;padding:32px 16px;color:#666;font-size:15px;line-height:2.2;font-weight:600}
+
+@media(min-width:480px){.wrap{padding:0 16px 80px}header{padding:52px 24px 40px}.weather-grid{grid-template-columns:repeat(2,1fr)}.pack-grid{grid-template-columns:repeat(3,1fr)}}
+</style>
 </head>
-<body></body>
+<body>
+<div class="wrap">
+
+<!-- Elevator nav -->
+<nav class="elevator" id="elevator">
+  <div class="elevator-inner">
+    <a href="#sec-overview"><span class="ei">📍</span>速览</a>
+    <a href="#sec-transport"><span class="ei">✈️</span>交通</a>
+    <a href="#sec-spots"><span class="ei">🏔</span>景点</a>
+    <a href="#sec-food"><span class="ei">🍜</span>美食</a>
+    <a href="#sec-stay"><span class="ei">🏨</span>住宿</a>
+    <a href="#sec-plan"><span class="ei">🗺</span>行程</a>
+    <a href="#sec-tips"><span class="ei">⚠️</span>注意</a>
+  </div>
+</nav>
+
+<header>
+  <h1>来银川，焦李吃喝玩乐 🐪</h1>
+  <p>感谢你们远道而来，参加我们的婚礼 ❤️<br>这是给你们准备的吃喝玩乐攻略</p>
+</header>
+
+<!-- 银川速览 -->
+<div class="sec" id="sec-overview">
+<div class="sec-title"><span class="icon">📍</span> 7月的银川长这样</div>
+<p class="sec-desc">干热不闷，白天晒但早晚凉快，跟广东（南方）完全是两种热法。紫外线很强，不防晒一天就黑。</p>
+
+<div class="weather-grid">
+  <div class="weather-item">
+    <div class="wi-icon">☀️</div>
+    <div class="wi-label">白天</div>
+    <div class="wi-val"><hot>28-35°C</hot></div>
+  </div>
+  <div class="weather-item">
+    <div class="wi-icon">🌙</div>
+    <div class="wi-label">早晚</div>
+    <div class="wi-val">18-22°C</div>
+  </div>
+  <div class="weather-item">
+    <div class="wi-icon">💧</div>
+    <div class="wi-label">湿度</div>
+    <div class="wi-val">&lt;30%</div>
+  </div>
+  <div class="weather-item">
+    <div class="wi-icon">🧴</div>
+    <div class="wi-label">紫外线</div>
+    <div class="wi-val"><hot>极强</hot></div>
+  </div>
+</div>
+
+<div class="tip">银川湿度常年不到30%，广东（南方）来的朋友多喝水、带保湿霜和润唇膏，不然嘴唇第二天就裂了<br>另外早晚温差大，白天35度晚上可能降到18度，记得带件薄外套</div>
+</div>
+
+<!-- 穿搭 -->
+<div class="sec">
+<div class="sec-title"><span class="icon">👕</span> 穿搭 & 行李</div>
+<div class="c">
+  <div class="pack-grid">
+    <div class="pack-item">👕 <b>短袖为主</b>+薄外套</div>
+    <div class="pack-item">🧴 <b>防晒霜 SPF50+</b></div>
+    <div class="pack-item">🕶 墨镜+遮阳帽</div>
+    <div class="pack-item">💄 <b>润唇膏+保湿霜</b></div>
+    <div class="pack-item">👟 运动鞋（去沙漠穿封闭款）</div>
+    <div class="pack-item">🧣 女生鲜艳颜色薄披肩（沙漠出片+防晒）</div>
+  </div>
+</div>
+</div>
+
+<!-- 交通 -->
+<div class="sec" id="sec-transport">
+<div class="sec-title"><span class="icon">✈️</span> 怎么到银川</div>
+<div class="trans">
+  <div class="trans-icon">✈️</div>
+  <div class="trans-body">
+    <strong>飞机（推荐）</strong><br>
+    直飞银川河东机场<br>
+    7月是旺季，<span class="hl">提前2-3周下手最划算</span> · 周二/三出发、避开周末往返更省<br>
+    河东机场离市中心<span class="hl">约25公里</span>，打车到金凤区约40分钟，¥80-100
+  </div>
+</div>
+<div class="trans">
+  <div class="trans-icon">🚄</div>
+  <div class="trans-body">
+    <strong>高铁</strong><br>
+    广州南 → 银川 · <span class="hl">约12小时</span> · 二等座 ¥800-900 · 适合想沿途看风景或不想飞的朋友<br>
+    西安北 → 银川 · <span class="hl">约3小时</span> · 二等座 ¥260左右<br>
+    兰州西 → 银川 · <span class="hl">约3小时</span> · 二等座 ¥220左右<br>
+    想一趟玩西安（兵马俑/大唐不夜城）或兰州（黄河/牛肉面）再转银川的，这两条线最顺
+  </div>
+</div>
+</div>
+
+<!-- 市内交通 -->
+<div class="sec">
+<div class="sec-title"><span class="icon">🚕</span> 市内交通</div>
+<div class="trans">
+  <div class="trans-icon">🚕</div>
+  <div class="trans-body"><strong>打车/滴滴</strong>（最方便）<br>市区景点 ¥10-20 · 镇北堡/岩画 ¥40-60</div>
+</div>
+<div class="trans">
+  <div class="trans-icon">🚗</div>
+  <div class="trans-body"><strong>租车自驾</strong><br>神州/一嗨都有 · 日租 ¥100-200 · 去中卫推荐</div>
+</div>
+<div class="trans">
+  <div class="trans-icon">🚐</div>
+  <div class="trans-body"><strong>包车</strong><br>¥400-600/天 · 4-5人拼最划算</div>
+</div>
+<div class="tip">景区附近返程不好打车，建议出发前跟司机约好接送，或用滴滴预约</div>
+</div>
+
+<div class="gap"></div>
+
+<!-- 景点 -->
+<div class="sec" id="sec-spots">
+<div class="sec-title"><span class="icon">🏔</span> 必去景点一览</div>
+
+<div class="spot-card must-go">
+  <img class="spot-img" src="images/lanshan.webp" alt="览山公园罗马剧场" loading="lazy">
+  <div class="spot-name">🌅 览山公园<span class="must">强烈推荐</span></div>
+  <div class="spot-desc">银川看日落第一选择，婚礼客人必去。罗马风格露天剧场建在山上，夕阳打过来非常震撼，穿鲜艳裙子拍照超出片</div>
+  <div class="spot-meta"><span>🎫 免费</span> <span>📍 金凤区内</span> <span>🚕 10min</span> <span>⏰ 1h</span> <a class="map" href="https://uri.amap.com/search?keyword=览山公园&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+</div>
+<div class="spot-card must-go">
+  <img class="spot-img" src="images/shapotou.webp" alt="沙坡头沙漠风光" loading="lazy">
+  <div class="spot-name">🐪 沙坡头（中卫）<span class="must">强烈推荐</span></div>
+  <div class="spot-desc">黄河和沙漠交汇的地方，西北沙漠体验的天花板。有时间一定要去——滑沙、骑骆驼、黄河漂流、沙漠冲浪、羊皮筏子，一天玩不够。沙漠里穿鲜艳裙子拍照绝了<br>🐫 骆驼驾照考试点！</div>
+  <div class="spot-meta"><span>🎫 ¥80</span> <span>🚗 距银川约3h</span> <span>⏰ 1-2天</span> <a class="map" href="https://uri.amap.com/search?keyword=沙坡头景区&amp;city=640500" target="_blank" rel="noopener">高德导航</a></div>
+</div>
+<div class="spot-card">
+  <img class="spot-img" src="images/ningxia-museum.webp" alt="宁夏博物馆建筑外观" loading="lazy">
+  <div class="spot-name">🏛 宁夏博物馆</div>
+  <div class="spot-desc">了解一下西夏历史和宁夏文化，逛2小时刚好</div>
+  <div class="spot-meta"><span>🎫 免费</span> <span>📍 金凤区内</span> <span>🚕 10min</span> <span>⏰ 2h</span> <a class="map" href="https://uri.amap.com/search?keyword=宁夏博物馆&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+</div>
+<div class="spot-card">
+  <img class="spot-img" src="images/zhenbeipu.webp" alt="镇北堡西部影城" loading="lazy">
+  <div class="spot-name">🎬 镇北堡西部影城</div>
+  <div class="spot-desc">大话西游、红高粱、新龙门客栈拍摄地。换上戏服在影视城里拍照，体验感很强</div>
+  <div class="spot-meta"><span>🎫 ¥80</span> <span>🚕 约40min</span> <span>⏰ 3-4h</span> <a class="map" href="https://uri.amap.com/search?keyword=镇北堡西部影城&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+</div>
+<div class="spot-card">
+  <img class="spot-img" src="images/helan-rock-art.webp" alt="贺兰山岩画" loading="lazy">
+  <div class="spot-name">🗿 贺兰山岩画</div>
+  <div class="spot-desc">几千年前游牧民族在贺兰山石壁上刻的图案，山谷里凉快，运气好能看到岩羊</div>
+  <div class="spot-meta"><span>🎫 ¥70</span> <span>🚕 约50min</span> <span>⏰ 2-3h</span> <a class="map" href="https://uri.amap.com/search?keyword=贺兰山岩画&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+</div>
+<div class="spot-card">
+  <img class="spot-img" src="images/shahu.webp" alt="沙湖：一半沙漠一半湖" loading="lazy">
+  <div class="spot-name">🏜️ 沙湖</div>
+  <div class="spot-desc">一半沙漠一半湖的奇观，坐船穿过芦苇荡，看候鸟和沙漠共存的画面</div>
+  <div class="spot-meta"><span>🎫 门票+船票 ¥150</span> <span>🚕 约1h</span> <span>⏰ 大半天</span> <a class="map" href="https://uri.amap.com/search?keyword=沙湖景区&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+</div>
+</div>
+
+<div class="gap"></div>
+
+<!-- 美食 -->
+<div class="sec" id="sec-food">
+<div class="sec-title"><span class="icon">🍜</span> 必吃美食</span></div>
+<div class="c">
+  <div class="food-item must-go">
+    <div class="food-emoji">🏮</div>
+    <div class="food-body">
+      <div class="fname">怀远夜市 <span class="must">强烈推荐</span></div>
+      <div class="fdesc">银川最热闹的夜市，来了一定要去 · 宫廷香酥牛肉饼、丁铁民烤蛋、一米大串、辣条，从头吃到尾</div>
+      <div class="fprice">人均 ¥30-50 <a class="map" href="https://uri.amap.com/search?keyword=怀远夜市&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+    </div>
+  </div>
+  <div class="food-item">
+    <div class="food-emoji">🥩</div>
+    <div class="food-body">
+      <div class="fname">阿叶手抓</div>
+      <div class="fdesc">手抓羊肉蘸醋就是宁夏味，肉质鲜嫩</div>
+      <div class="fprice">人均 ¥80-100 <a class="map" href="https://uri.amap.com/search?keyword=阿叶手抓&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+    </div>
+  </div>
+  <div class="food-item">
+    <div class="food-emoji">🔥</div>
+    <div class="food-body">
+      <div class="fname">羊尕子烧烤（阅彩城店）</div>
+      <div class="fdesc">银川人气烧烤，滩羊烤串、红柳枝烤肉 · 金凤区阅彩城</div>
+      <div class="fprice">人均 ¥60-80 <a class="map" href="https://uri.amap.com/search?keyword=羊尕子烧烤阅彩城&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+    </div>
+  </div>
+  <div class="food-item">
+    <div class="food-emoji">🍲</div>
+    <div class="food-body">
+      <div class="fname">阿叶羊杂碎（前进街店）</div>
+      <div class="fdesc">一碗羊杂碎汤，早餐宵夜都合适</div>
+      <div class="fprice">人均 ¥25-35 <a class="map" href="https://uri.amap.com/search?keyword=阿叶羊杂碎&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+    </div>
+  </div>
+  <div class="food-item">
+    <div class="food-emoji">🍽</div>
+    <div class="food-body">
+      <div class="fname">迎宾楼</div>
+      <div class="fdesc">老字号清真菜，种类多，适合聚餐</div>
+      <div class="fprice">人均 ¥50-70 <a class="map" href="https://uri.amap.com/search?keyword=迎宾楼&amp;city=640100" target="_blank" rel="noopener">高德导航</a></div>
+    </div>
+  </div>
+</div>
+<div class="tip">银川大部分餐厅是清真的，不带外食进店，尊重当地习俗</div>
+</div>
+
+<!-- 住宿 -->
+<div class="sec" id="sec-stay">
+<div class="sec-title"><span class="icon">🏨</span> 住宿推荐</div>
+<div class="tip">7.17-19 婚礼期间的酒店我们已经安排好了，点这里直接导航 👇<br><a href="https://surl.amap.com/AilM2288Fl" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;background:#00B386;color:#fff;font-weight:600;font-size:12px;padding:5px 14px;border-radius:20px;text-decoration:none;margin-top:8px">📍 住宿酒店导航 →</a></div>
+<div style="font-size:12px;color:#888;margin:8px 0">以下是其他日期续住或提前到访参考，均在金凤区内，打车方便</div>
+<div class="c">
+  <div class="hotel"><div><div class="hname">JW万豪</div><div class="hdesc">金凤区核心 · 五星</div></div><div class="hprice">¥500-700</div></div>
+  <div class="hotel"><div><div class="hname">凯宾斯基饭店</div><div class="hdesc">国际高端 · 五星</div></div><div class="hprice">¥450-600</div></div>
+  <div class="hotel"><div><div class="hname">万达嘉华</div><div class="hdesc">万达商圈 · 吃喝方便</div></div><div class="hprice">¥400-550</div></div>
+  <div class="hotel"><div><div class="hname">智选假日（亲水大街）</div><div class="hdesc">IHG旗下 · 性价比高</div></div><div class="hprice">¥250-350</div></div>
+  <div class="hotel"><div><div class="hname">凯悦嘉轩（大阅城）</div><div class="hdesc">凯悦中端品牌</div></div><div class="hprice">¥300-400</div></div>
+  <div class="hotel"><div><div class="hname">雲昇酒店（悦海新天地）</div><div class="hdesc">经济实惠 · 评分4.9</div></div><div class="hprice">¥150-250</div></div>
+</div>
+</div>
+
+<div class="gap"></div>
+
+<!-- 行程方案 -->
+<div class="sec" id="sec-plan">
+<div class="sec-title"><span class="icon">🗺</span> 行程方案</div>
+
+<!-- 1-2天 -->
+<div style="background:#fff;border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+  <div style="font-size:16px;font-weight:700;color:var(--o);margin-bottom:4px">方案一：1-2天 · 随便逛逛</div>
+  <div style="font-size:12px;color:#888;margin-bottom:12px">婚礼前后插空玩，不远走，吃吃喝喝拍拍照</div>
+
+  <div class="day-header"><div class="day-num">1</div><div class="day-title">市区 + 影城 + 日落</div></div>
+  <ul style="font-size:13px;padding-left:20px;margin-bottom:4px">
+    <li>上午：<b>宁夏博物馆</b>（免费，金凤区内，打车10分钟）</li>
+    <li>下午：<b>镇北堡西部影城</b>（¥80，打车40分钟，3-4小时）</li>
+    <li>傍晚：<b>览山公园看日落</b>（免费，金凤区内，打车10分钟）</li>
+    <li>晚上：<b>怀远夜市</b>（打车15分钟，从头吃到尾）</li>
+  </ul>
+
+  <div class="day-header"><div class="day-num">2</div><div class="day-title">贺兰山 + 老城区</div></div>
+  <ul style="font-size:13px;padding-left:20px">
+    <li>上午：<b>贺兰山岩画</b>（¥70，打车50分钟，2-3小时）</li>
+    <li>中午：<b>国强手抓</b>吃手抓羊肉（解放西街总店）</li>
+    <li>下午：逛<b>鼓楼</b>和<b>南关清真寺</b>（老城区步行可达）</li>
+  </ul>
+</div>
+
+<!-- 2天 -->
+<div style="background:#fff;border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+  <div style="font-size:16px;font-weight:700;color:var(--o);margin-bottom:4px">方案二：2天 · 加沙湖</div>
+  <div style="font-size:12px;color:#888;margin-bottom:12px">Day 1 同方案一，Day 2 去沙湖</div>
+
+  <div class="day-header"><div class="day-num">1</div><div class="day-title">同方案一</div></div>
+  <ul style="font-size:13px;padding-left:20px;margin-bottom:4px">
+    <li>博物馆 → 镇北堡 → 览山日落 → 怀远夜市</li>
+  </ul>
+
+  <div class="day-header"><div class="day-num">2</div><div class="day-title">沙湖（银川西北方向）</div></div>
+  <ul style="font-size:13px;padding-left:20px">
+    <li>全天：<b>沙湖</b>（门票+船票 ¥150，打车约1小时）</li>
+    <li>半沙半湖奇观，坐船穿芦苇荡，可玩沙漠项目</li>
+    <li>上午出发，大半天可玩完，下午返回</li>
+  </ul>
+</div>
+
+<!-- 3-5天 -->
+<div style="background:#fff;border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+  <div style="font-size:16px;font-weight:700;color:var(--o);margin-bottom:4px">方案三：3-5天 · 杀到中卫去 🐪</div>
+  <div style="font-size:12px;color:#888;margin-bottom:12px">前面方案玩完，再加1-2天去中卫，那里有腾格里沙漠和沙坡头，值得去</div>
+
+  <div class="day-header"><div class="day-num">1-2</div><div class="day-title">同方案二</div></div>
+  <ul style="font-size:13px;padding-left:20px;margin-bottom:4px">
+    <li>银川市区 + 沙湖</li>
+  </ul>
+
+  <div class="day-header"><div class="day-num">4</div><div class="day-title">银川 → 中卫沙坡头</div></div>
+  <ul style="font-size:13px;padding-left:20px;margin-bottom:4px">
+    <li>早上出发，自驾/包车约3小时到中卫</li>
+    <li><b>沙坡头</b>：滑沙、骑骆驼、黄河漂流、沙漠冲浪、羊皮筏子（¥80）</li>
+    <li>晚上住中卫：推荐沙漠星空帐篷酒店（可看银河）或市区中卫大酒店</li>
+  </ul>
+
+  <div class="day-header"><div class="day-num">5</div><div class="day-title">腾格里沙漠 or 返程</div></div>
+  <ul style="font-size:13px;padding-left:20px">
+    <li>上午：继续沙坡头或深入<b>腾格里沙漠</b>（越野穿越、沙漠露营）</li>
+    <li>下午：返回银川（3小时）或直接从中卫坐火车/飞机离开</li>
+  </ul>
+
+  <div style="margin-top:10px">
+    <div style="font-size:14px;font-weight:600;margin-bottom:6px">🏕 中卫住宿</div>
+    <div class="hotel"><div><div class="hname">沙漠星空帐篷酒店</div><div class="hdesc">沙漠里看银河</div></div><div class="hprice">¥400-800</div></div>
+    <div class="hotel"><div><div class="hname">中卫大酒店</div><div class="hdesc">市区中档，方便</div></div><div class="hprice">¥200-350</div></div>
+    <div class="hotel"><div><div class="hname">沙坡头景区民宿</div><div class="hdesc">步行到景区</div></div><div class="hprice">¥150-300</div></div>
+  </div>
+</div>
+</div>
+
+<div class="gap"></div>
+
+<!-- 注意事项 -->
+<div class="sec" id="sec-tips">
+<div class="sec-title"><span class="icon">⚠️</span> 最后讲两句</div>
+<div class="c">
+  <ul class="notice">
+    <li><b>防晒不是开玩笑</b>：紫外线极强，SPF50+涂起来，帽子冰袖都带上</li>
+    <li><b>多喝水</b>：这边干到你怀疑人生，润唇膏和保湿霜随身带</li>
+    <li><b>大部分餐厅是清真</b>：不带外食进店，尊重当地习俗</li>
+    <li><b>去沙漠穿运动鞋</b>：凉鞋进沙很难受，手机最好套个防沙袋</li>
+    <li><b>早晚凉</b>：带件薄外套，贺兰山脚下和沙漠晚上能降到18度</li>
+    <li><b>返程打车</b>：景区附近不好打车，出发前跟司机约好回来接，或用滴滴预约</li>
+    <li><b>提前订房</b>：7月是旺季，续住酒店和沙漠帐篷早点订，晚了没好的</li>
+  </ul>
+</div>
+</div>
+
+<footer>
+  <p>有问题随时联系新郎/新娘 😊</p>
+  <p>7·18 银川见！🎉</p>
+</footer>
+
+</div>
+<script>
+// Elevator nav: scroll spy + smooth scroll + auto hide/show
+(function(){
+  var el=document.getElementById('elevator'),
+      links=el.querySelectorAll('a'),
+      sections=[],
+      prevY=0;
+
+  links.forEach(function(a){
+    var id=a.getAttribute('href').slice(1),
+        sec=document.getElementById(id);
+    if(sec) sections.push({el:sec,link:a});
+  });
+
+  // Smooth scroll
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var id=this.getAttribute('href').slice(1),
+          target=document.getElementById(id);
+      if(target){
+        var top=target.getBoundingClientRect().top+window.pageYOffset-56;
+        window.scrollTo({top:top,behavior:'smooth'});
+      }
+    });
+  });
+
+  // Scroll spy
+  function update(){
+    var scrollY=window.pageYOffset;
+
+    // Show/hide elevator
+    if(scrollY<120){
+      el.classList.add('hide');
+      el.classList.remove('show');
+    }else{
+      el.classList.remove('hide');
+      el.classList.add('show');
+    }
+
+    // Highlight active section
+    var active=null;
+    // 滚到底部时，强制选中最后一个 section
+    var scrolledToBottom = (window.innerHeight + window.pageYOffset) >= (document.body.scrollHeight - 5);
+    if(scrolledToBottom && sections.length>0){
+      active=sections[sections.length-1];
+    } else {
+      for(var i=sections.length-1;i>=0;i--){
+        if(sections[i].el.getBoundingClientRect().top<80){
+          active=sections[i];break;
+        }
+      }
+    }
+    links.forEach(function(l){l.classList.remove('active')});
+    if(active){
+      active.link.classList.add('active');
+      // mobile: 把激活的 tab 滚到电梯导航可见区域
+      active.link.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    }
+  }
+
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(function(){update();ticking=false});ticking=true}
+  });
+  update();
+})();
+</script>
+</body>
 </html>
